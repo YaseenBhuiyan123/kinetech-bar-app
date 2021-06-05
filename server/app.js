@@ -1,14 +1,13 @@
 const express = require("express");
-const cors = require("cors");
-
-const db = require("./firebase");
-
-const port = 8000;
 const app = express();
+const db = require("./firebase");
+const port = 8000;
+const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
 
+/*
 app.get("/books/get", async (req, res) => {
   const snapshot = await db.collection("books").get();
 
@@ -46,6 +45,7 @@ app.delete("/books/delete", async (req, res) => {
       console.error("Error deleting document: ", error);
     });
 });
+*/
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}...`);
