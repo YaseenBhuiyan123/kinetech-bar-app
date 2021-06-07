@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import { Button, Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import MenuForm from "./components/MenuForm";
 
-function App() {
+export default function AddModal() {
   function getModalStyle() {
     const top = 50;
     const left = 50;
@@ -36,34 +33,34 @@ function App() {
     setOpen(false);
   };
 
+  const handleClick = () => {
+    handleOpen();
+    console.log("hello");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Kinetech Cloud Bar</h1>
-        <h3>Online Ordering</h3>
-        <Button
-          variant="contained"
-          onClick={(event) => {
-            event.stopPropagation();
-            handleOpen();
-          }}
-          size="small"
-        >
-          Place Order
-        </Button>
-        <Modal
-          open={open}
-          onClose={(event) => {
-            event.stopPropagation();
-            handleClose();
-          }}
-        >
-          <MenuForm />
-        </Modal>
-      </header>
+    <div>
+      <Button
+        variant="contained"
+        onClick={(event) => {
+          event.stopPropagation();
+          handleClick();
+        }}
+        size="small"
+      >
+        Add
+      </Button>
+      <Modal
+        open={open}
+        onClose={(event) => {
+          event.stopPropagation();
+          handleClose();
+        }}
+      >
+        <div style={modalStyle} className={styles.paper}>
+          <h3>Added to cart!</h3>
+        </div>
+      </Modal>
     </div>
   );
 }
-
-export default App;

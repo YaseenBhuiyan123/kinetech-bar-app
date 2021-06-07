@@ -1,9 +1,14 @@
 .App {
   text-align: center;
+  background-image: url("bar_background.jpeg");
+  background-color: #282c34;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -14,7 +19,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

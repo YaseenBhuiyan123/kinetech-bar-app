@@ -7,18 +7,17 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-/*
-app.get("/books/get", async (req, res) => {
-  const snapshot = await db.collection("books").get();
+app.get("/drinks/get", async (req, res) => {
+  const snapshot = await db.collection("drinks").get();
 
-  const books = [];
+  const drinks = [];
 
   snapshot.forEach((doc) => {
-    books.push({ ...doc.data(), id: doc.id });
+    drinks.push({ ...doc.data(), id: doc.id });
   });
-  res.send(JSON.stringify(books, undefined, 4));
+  res.send(JSON.stringify(drinks, undefined, 4));
 });
-
+/*
 app.post("/books/add", async (req, res) => {
   const { title, author } = req.body;
 
